@@ -1,6 +1,6 @@
-import { moun } from 'marketing/MarketingApp';
+import { mount } from 'marketing/MarketingApp';
 import React, { useRef, useEffect } from 'react'
-import { mount } from '../../../marketing/src/bootstrap';
+
 
 
 export default () => {
