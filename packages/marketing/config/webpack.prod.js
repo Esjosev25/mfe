@@ -6,18 +6,19 @@ const commonConfig = require('./webpack.common');
 const prodConfig = {
     mode: 'production',
     output: {
-        filename: '[name].[contenhash].js'
+        filename: '[name].[contenthash].js',
+        publicPath: '/marketing/latest/',
     },
     plugins: [
         new ModuleFederationPlugin({
             name: 'marketing',
             filename: 'remoteEntry.js',
             exposes: {
-                './MarketingApp': './src/bootstrap'
+                './MarketingApp': './src/bootstrap',
             },
-            shared: packageJson.dependencies
-        })
-    ]
-}
+            shared: packageJson.dependencies,
+        }),
+    ],
+};
 
-module.exports = merge(commonConfig, prodConfig)
+module.exports = merge(commonConfig, prodConfig);
